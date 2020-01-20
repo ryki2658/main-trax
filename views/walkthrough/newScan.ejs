@@ -1,0 +1,33 @@
+<% include ../common/header %>
+
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-left">
+                <h3>SAVED!</h3>
+                <h2><%= item %></h2>
+                  <p>Item registered to walkthrough report.</p>
+                <hr>
+                <h4>Thank you!</h4>
+                <hr>
+                <form action='/walkthrough/<%= walkID %>/details' method="GET">
+                    <input type="submit" value="Add Details" />
+                </form>
+                <br>
+                <%if (user) { %>
+                    <a href="/walkthrough/myReport">My Reports</a>
+                <% } 
+                else{ %>
+                    <p>Create an account and login before scanning to create a personalized report of all your scanned items.</p>
+                    <a href="/walkthrough/myReport">Log in to Save to My Reports</a>
+                <% } %>
+                <br>
+                <a href="/">MainTrax home</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<% include ../common/footer %>

@@ -1,0 +1,40 @@
+<% include ../common/header %>
+
+<div class="card mb-3">
+	<div class="card-header">
+	  <i class="fas fa-table"></i>
+	  Walkthrough QR Scan Report</div>
+	<div class="card-body">
+	  <div class="table-responsive">
+		<table class="table table-bordered" id="walkTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th style="display: none;">ID</th>
+                            <th>Location</th>
+                            <th>Date/Time</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% items.forEach(function(item){ %>
+                        <tr>
+                            <td style="display: none;"><%= item._id %></td>
+                            <td><%= item.walk_location %></td>
+                            <td><%= item.walk_scan_date %></td>
+                            <td>
+                                <%if (item.walk_details || item.walk_motor_lubed =='yes'||item.walk_filter_change =='yes') { %>
+                                    <div class="text-center">
+                                        <form action='/walkthrough/<%= item._id %>/showDetails' method="GET">
+                                            <input type="submit" value="View" />
+                                        </form>
+                                    </div>
+                                <% } %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>	
+		</div>
+
+<% include ../common/footer %>

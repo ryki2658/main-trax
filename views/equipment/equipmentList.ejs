@@ -1,0 +1,53 @@
+<% include ../common/header %>
+<!-- Equipment Locations -->
+
+<div class="card mb-3">
+	<div class="card-header">
+	  <i class="fas fa-table"></i>
+	  Loaned Equipment Locations
+	</div>
+	<div class="card-body">
+	  <div class="table-responsive">
+		<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+		  <thead>
+			<tr>
+			  <th style="display: none;">ID</th>
+			  <th>Update/Delete</th>
+			  <th>Equipment</th>
+			  <th>Location</th>
+			  <th>Date Created</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<% equip.forEach(function(e){ %>
+			  <tr>
+				<td style="display: none;"><%= e._id %></td>
+				<td>
+				<div class="left">
+					<form action='/equipment/<%= e._id %>/remove' onsubmit="return myAlert()">
+					<input type="submit" value="Delete" />
+					</form>
+				</div>
+				<div class="right">
+					<form action='/equipment/<%= e._id %>/edit'>
+						<input type="submit" value="Update" />
+					
+					</form>
+				</div>
+				</td>
+				<td><%= e.equipment_name %></a></td>
+				<td><%= e.equipment_location %></td>
+				<td><%= e.equipment_date %></td>
+			  </tr>
+			<% }) %>
+		  </tbody>
+		</table>
+		<div class="button-right" >
+			<a href="equipment/create/new">
+				<button type="button"><i class="fa fa-plus"></i>New Equipment</button>
+			</a>
+		</div>
+	  </div>
+	</div>
+
+<% include ../common/footer %>

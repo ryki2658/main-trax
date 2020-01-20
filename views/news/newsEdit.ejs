@@ -1,0 +1,75 @@
+
+<% include ../common/header %>
+<body>
+    <div class="col-md-12" style="padding-top: 10px">
+        <div class="row">
+            <legend class="text-center"> <i class="fa fa-plus"></i>News Edit</legend>
+    
+            <form class="form-horizontal" action="/news/<%= news._id %>/update" method="POST" style="width: 100%">
+              <fieldset>
+
+                <!-- Headline1 body -->
+                <div class="form-group">
+                    <label class="col-md-4">News Headline</label>
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="news_headline1"value="<%= news.news_headline1 %>" rows="1"><%= news.news_headline1 %></textarea>
+                    </div>
+                </div>
+                
+                <!-- News body1 -->
+                <div class="form-group">
+                    <label class="col-md-4">News Body</label>
+                    <div class="col-md-12">
+                      <textarea class="form-control" name="news_body1"value="<%= news.news_body1 %>" rows="5"><%= news.news_body1 %></textarea>
+                    </div>
+                  </div>
+
+                <!-- News body3 -->
+                <div class="form-group">
+                    <label class="col-md-4">News Body 2nd paragraph</label>
+                    <div class="col-md-12">
+                      <textarea class="form-control" name="news_body3"value="<%= news.news_body3 %>" rows="5"><%= news.news_body3 %></textarea>
+                    </div>
+                  </div>
+
+                <!-- Headline2 body -->
+                <div class="form-group">
+                    <label class="col-md-4">Event Headline</label>
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="news_headline2"value="<%= news.news_headline2 %>" rows="1"><%= news.news_headline2 %></textarea>
+                    </div>
+                </div>
+                
+                <!-- News body2 -->
+                <div class="form-group">
+                    <label class="col-md-4">Event Body</label>
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="news_body2"value="<%= news.news_body2 %>" rows="5"><%= news.news_body2 %></textarea>
+                    </div>
+                </div>
+    
+
+                <!-- Date -->
+                <div class="form-group">
+                  <label class="col-md-4">Date Created</label>
+                  <div class="col-md-12">
+                    <input class="form-control" name="news_date"value="<%= news.news_date %>" readonly="true" ></input>
+                  </div>
+                </div>
+        
+                <!-- Form actions -->
+                <div class="form-group">
+                  <div class="col-md-12 text-right">
+                    <button type="submit" value="execute">Update Details</button>
+                    <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Back" />
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+<% include ../common/footer %>
+
+

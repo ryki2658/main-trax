@@ -1,0 +1,87 @@
+<% include ../common/header %>
+
+
+<div class="card mb-3">
+	<div class="card-header">
+      <h6><i class="fas fa-table"></i> Job Trax For: </h6> <h4><%= selection %></h4>
+    </div>
+    
+	<div class="card-body">
+	  <div class="table-responsive"> 
+            <div class="col-md-12">
+            <%if (user.local.is_admin) { %>
+                <form method="POST" action="/Jobs/show/<%= user._id %>">
+                    <label>User Filter</label>
+                    <select name="sort_selection">
+                        <option value="ALL">All Users</option>
+                        <% users.forEach(function(u){ %>
+                            <option value="<%= u._id %>"><%= u.local.firstName %></option>
+                        <% }) %>
+                    </select>    
+                    <button type="submit" value="execute">Filter</button>
+                    <br>
+                </form>
+                <div class="text-right"><button type="button" onclick="location.href='/jobs/create/new'"><i class="fa fa-plus"></i>New Job</button>
+                </div>
+                <br>
+            <% } %>
+        </div>
+        
+		<table class="table table-bordered" id="jobsTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th style="display: none;">ID</th>
+                    <th>View/Edit</th>
+                    <th>Job ID</th>
+                    <th>Job Location</th>
+                    <th>Request</th>
+                    <th>Job Status</th>
+                    <th style="display: none;">Job Status</th>
+                    <th>Date Created</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% jobs.forEach(function(job){ %>
+                <tr>
+                    <td style="display: none;"><%= job._id %></td>
+                    <td>
+                        <div class="left">
+                            <form action='/jobs/<%= job._id %>' method="GET">
+                                <input type="submit" value="View/Edit" />
+                            </form>
+                        </div>
+                    </td>
+                    <td><%= job.job_ID %></td>
+                    <td><%= job.job_location %></td>
+                    <td><%= job.job_request.substring(0,20) %></td>
+                    <td
+                    <%if (job.job_status !== 'done') { %>
+                        style="display: none;"
+                    
+                    <% }else{ %>>
+                        <input type="radio" name="<%= job._id %>" value="done" checked="checked"> Done 
+                    <% } %>
+                    </td>
+                    <td
+                    <%if (job.job_status !== 'inProgress') { %>
+                        style="display: none;"
+                    
+                    <% }else{ %>>
+                        <input type="radio" name="<%= job._id %>" value="inProgress" checked="checked"> In Progress 
+                    <% } %>
+                    </td>
+                    <td><%= job.job_create_date %></td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+        <div class="button-right">
+            <a href="/jobs/create/new">
+                <button type="button"><i class="fa fa-plus"></i>New Job</button>
+            </a>
+        </div>
+    </div>
+</div>
+      
+
+<% include ../common/footer %>

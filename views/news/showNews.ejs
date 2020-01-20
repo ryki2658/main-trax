@@ -1,0 +1,44 @@
+<% include ../common/header %>
+<!-- news Locations -->
+
+<div class="card mb-3">
+	<div class="card-header">
+	  <i class="fas fa-table"></i>
+      Show News
+    </div>
+	<div class="card-body">
+	  <div class="table-responsive">
+		<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+					<thead>
+						<tr>
+							<th style="display: none;">ID</th>
+							<th>Headline 1</th>
+							<th>Headline 2</th>
+							<th>Body 1</th>
+							<th>Body 2</th>
+							<th>Edit</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% news.forEach(function(news){ %>
+							<tr>
+								<td style="display: none;"><%= news._id %></td>
+								<td><%= news.news_headline1 %></td>
+								<td><%= news.news_headline2 %></td>
+								<td><%= news.news_body1.substring(0,20) %></td>
+								<td><%= news.news_body2.substring(0,20) %></td>
+								<td>
+									<div class="center">
+										<form action='/news/<%= news._id %>/edit'>
+											<input type="submit" value="Edit News" />
+										</form>
+									</div>
+								</td>
+							</tr>
+						<% }) %>
+					</tbody>
+				</table>
+			  </div>
+			</div>
+
+<% include ../common/footer %>

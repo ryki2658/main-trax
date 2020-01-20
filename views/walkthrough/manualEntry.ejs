@@ -1,0 +1,123 @@
+<% include ../common/header %>
+    <body>
+        <div class="col-md-12" style="padding-top: 10px">
+            <div class="row">
+                <legend class="text-center"> <i class="fa fa-plus"></i>Add New Pick Up Request</legend>
+        
+                <form class="form-horizontal" action="/walkthrough/create" method="POST" style="width: 100%">
+                  <fieldset>
+
+                    <!-- walkthrough location-->
+
+                    <div class="form-group">
+                        <label class="col-md-4">Location</label>
+                        <div class="col-md-12">
+                            <select class="form-control" name="walk_location">
+                            <option value=""></option>
+                            <option value="ASE">ASE</option>
+                            <option value="BPH">BPH</option>
+                            <option value="Bus Garage">Bus Garage</option>
+                            <option value="CJHS">CJHS</option>
+                            <option value="CLC">CLC</option>
+                            <option value="CCE">CCE</option>
+                            <option value="DO">DO</option>
+                            <option value="DHS">DHS</option>
+                            <option value="ELC">ELC</option>
+                            <option value="Food Service">Food Service</option>
+                            <option value="GES">GES</option>
+                            <option value="GHS">GHS</option>
+                            <option value="GJHS">GJHS</option>
+                            <option value="IE">IE</option>
+                            <option value="MCE">MCE</option>
+                            <option value="NLE">NLE</option>
+                            <option value="OME">OME</option>
+                            <option value="OLE">OLE</option>
+                            <option value="RSE">RSE</option>
+                            <option value="SCE">SCE</option>
+                            <option value="Shop">Shop</option>
+                            <option value="SHS">SHS</option>
+                            <option value="SPES">SPES</option>
+                            <option value="SE">SE</option>
+                            <option value="THS">THS</option>
+                            <option value="TJHS">TJHS</option>
+                            <option value="VE">VE</option>
+                            <option value="WHS">WHS</option>
+                            <option value="WES">WES</option>
+                            <option value="Willow">Willow</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Type -->
+                    <div class="form-group">
+                        <label class="col-md-4">Equipment Type</label>
+                        <div class="col-md-12">
+                            <select class="form-control" name="walk_equipType">
+                            <option value=""></option>
+                            <option value="RTU">RTU</option>
+                            <option value="AHU">AHU</option>
+                            <option value="Boiler">Boiler</option>
+                            <option value="Chiler">Chiller</option>
+                            <option value="MAU">MAU</option>
+                            <option value="VAV">VAV</option>
+                            <option value="WalkinCooler">WalkinCooler</option>
+                            <option value="WalkinFreezer">WalkinFreezer</option>
+                            <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Numer -->
+                    <div class="form-group">
+                        <label class="col-md-4">Equipment Number</label>
+                        <div class="col-md-12">
+                            <input type="number" name="walk_equipNum" min="1">
+                        </div>
+                    </div>
+    
+
+                    <!-- Filters changed -->
+                    <div class="form-group">
+                        <label class="col-md-4">Filters Changed</label>
+                        <div class="col-md-12">
+                            <input type="radio" name="walk_filter_change" value="yes"> Yes <br>
+    
+                            <input type="radio" name="walk_filter_change" value="no" checked="checked"> No <br>
+                        </div>
+                    </div> 
+                    
+                    <!-- Motor Lubed -->
+                    <div class="form-group">
+                        <label class="col-md-4">Motor Gressed?</label>
+                        <div class="col-md-12">
+                            <input type="radio" name="walk_motor_lubed" value="yes"> Yes <br>
+    
+                            <input type="radio" name="walk_motor_lubed" value="no" checked="checked"> No <br>
+                        </div>
+                    </div>
+
+                    <!-- Description body -->
+                    <div class="form-group">
+                        <label class="col-md-4">Details</label>
+                        <div class="col-md-12">
+                            <textarea class="form-control" name="walk_details" placeholder="Note observations about the equipment condition, and detail any work performed on equipment." rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Form actions -->
+                    <div class="form-group">
+                      <div class="col-md-12 text-right">
+                        <button type="submit" value="execute">Add walkthrough</button>
+                        <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Cancel" />
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+<% include ../common/footer %>
+  
+
+  
