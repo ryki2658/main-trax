@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.maintrax.org/dashboard</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/users/signup</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/users/login</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/walkthrough</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/pickup</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/equipment</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/jobs</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/notAuth</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/walkthrough/myReport</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/walkthrough/manual</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/pickup/create/new</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.maintrax.org/equipment/create/new</loc>
+  <lastmod>2019-09-03T15:50:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
